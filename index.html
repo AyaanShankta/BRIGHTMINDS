@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kits - My Org</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Our Kits</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="kit" onclick="openModal('modal1')">
+      <h2>Kit A</h2>
+      <p>Basic starter kit</p>
+    </div>
+    <div class="kit" onclick="openModal('modal2')">
+      <h2>Kit B</h2>
+      <p>Advanced toolkit</p>
+    </div>
+    <div class="kit" onclick="openModal('modal3')">
+      <h2>Kit C</h2>
+      <p>Expert-level kit</p>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Kit A Details</h2>
+      <p>Includes basic tools for beginners. Great for getting started.</p>
+      <!-- Replace with your actual PayPal button -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="your-email@example.com">
+        <input type="hidden" name="item_name" value="Kit A">
+        <input type="hidden" name="amount" value="20.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Buy Now with PayPal">
+      </form>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Kit B Details</h2>
+      <p>Advanced toolkit for intermediate users with more components.</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="your-email@example.com">
+        <input type="hidden" name="item_name" value="Kit B">
+        <input type="hidden" name="amount" value="35.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Buy Now with PayPal">
+      </form>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Kit C Details</h2>
+      <p>Complete kit for professionals. Best value.</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="your-email@example.com">
+        <input type="hidden" name="item_name" value="Kit C">
+        <input type="hidden" name="amount" value="50.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Buy Now with PayPal">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      ['modal1', 'modal2', 'modal3'].forEach(id => {
+        if (event.target == document.getElementById(id)) {
+          closeModal(id);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
