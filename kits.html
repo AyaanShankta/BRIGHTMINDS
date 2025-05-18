@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Kits</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Kits</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="kits.html">Kits</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="kits-description">
+      <h2>What Are These Kits?</h2>
+      <p>This is a brief section to describe the idea behind your kit project.</p>
+    </section>
+
+    <section class="kits-description">
+      <h2>How They're Used</h2>
+      <p>Explain how these kits are helpful and where they’re used.</p>
+    </section>
+
+    <section class="kits-grid">
+      <div class="kit-card" onclick="openModal('kit1')">
+        <h3>Kit 1</h3>
+        <p>Click to learn more</p>
+      </div>
+      <div class="kit-card" onclick="openModal('kit2')">
+        <h3>Kit 2</h3>
+        <p>Click to learn more</p>
+      </div>
+      <div class="kit-card" onclick="openModal('kit3')">
+        <h3>Kit 3</h3>
+        <p>Click to learn more</p>
+      </div>
+    </section>
+
+    <section class="kits-extra">
+      <h2>More Information</h2>
+      <p>Add any final details or links here.</p>
+    </section>
+
+    <!-- Modal -->
+    <div id="kit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title">Kit Title</h3>
+        <p id="modal-body">Detailed info about the selected kit.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function openModal(kitId) {
+      const modal = document.getElementById("kit-modal");
+      const title = document.getElementById("modal-title");
+      const body = document.getElementById("modal-body");
+
+      if (kitId === 'kit1') {
+        title.textContent = "Kit 1 - Science Starter";
+        body.textContent = "Details about Kit 1 go here.";
+      } else if (kitId === 'kit2') {
+        title.textContent = "Kit 2 - Creative Circuit";
+        body.textContent = "Details about Kit 2 go here.";
+      } else if (kitId === 'kit3') {
+        title.textContent = "Kit 3 - RoboBeginner";
+        body.textContent = "Details about Kit 3 go here.";
+      }
+
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("kit-modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
